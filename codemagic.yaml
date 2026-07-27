@@ -1,0 +1,29 @@
+workflows:
+  ios-build:
+    name: Rocket Odyssey Pro iOS Build
+    max_build_duration: 60
+    environment:
+      xcode: 16.0
+      cocoapods: default
+      vars:
+        XCODE_PROJECT: "App.xcodeproj"
+        XCODE_SCHEME: "App"
+        BUNDLE_ID: "com.rocketodyssey.pro"
+      node: 20.11.0
+    scripts:
+      - name: Install CocoaPods
+        script: |
+          cd ios/App
+          pod install
+      - name: Build IPA (with clean flags)
+        script: |
+          xcode-project build-ipa \
+            --project "ios/App/$XCODE_PROJECT" \
+            --scheme "$XCODE_SCHEME" \
+            --archive-flags="-destination 'generic/platform=iOS'"
+    artifacts:
+      - build/ios/ipa/*.ipa
+    publishing:
+      email:
+        recipients:
+          - ayhanhasani33@gmail.com
