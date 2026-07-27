@@ -6,7 +6,7 @@ workflows:
       xcode: 16.0
       cocoapods: default
       vars:
-        XCODE_PROJECT: "App.xcodeproj"
+        XCODE_WORKSPACE: "App.xcworkspace"
         XCODE_SCHEME: "App"
         BUNDLE_ID: "com.rocketodyssey.pro"
       node: 20.11.0
@@ -32,7 +32,7 @@ workflows:
       - name: Build IPA
         script: |
           xcode-project build-ipa \
-            --project "ios/App/$XCODE_PROJECT" \
+            --workspace "ios/App/$XCODE_WORKSPACE" \
             --scheme "$XCODE_SCHEME" \
             --archive-flags="-destination 'generic/platform=iOS'"
     artifacts:
