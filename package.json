@@ -1,0 +1,19 @@
+{
+  "name": "rocket-odyssey-pro",
+  "version": "1.0.0",
+  "description": "Rocket Odyssey Pro - iOS App via Capacitor",
+  "main": "www/index.html",
+  "scripts": {
+    "cap:sync": "npx cap sync",
+    "cap:open": "npx cap open ios",
+    "cap:update": "npx cap update ios",
+    "cap:copy": "npx cap copy ios"
+  },
+  "dependencies": {
+    "@capacitor/core": "^6.1.2",
+    "@capacitor/ios": "^6.1.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.1.2"
+  }
+}
