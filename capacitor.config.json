@@ -1,0 +1,15 @@
+{
+  "appId": "com.rocketodyssey.pro",
+  "appName": "Rocket Odyssey Pro",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  },
+  "ios": {
+    "scheme": "RocketOdyssey",
+    "contentInset": "automatic",
+    "allowsLinkPreview": false,
+    "scrollEnabled": false,
+    "preferredContentMode": "mobile"
+  }
+}
