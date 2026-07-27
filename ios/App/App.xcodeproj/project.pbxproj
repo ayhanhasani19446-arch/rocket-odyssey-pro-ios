@@ -118,6 +118,7 @@
 			);
 		};
 /* End PBXProject section */
+
 /* Begin PBXResourcesBuildPhase section */
 		B1B2C3D4E5F6B1B2C3D4E5F8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -146,7 +147,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"Build script placeholder for Capacitor\n\"\n";
+			shellScript = "echo "Build script placeholder for Capacitor\n"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

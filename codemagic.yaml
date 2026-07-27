@@ -11,11 +11,26 @@ workflows:
         BUNDLE_ID: "com.rocketodyssey.pro"
       node: 20.11.0
     scripts:
+      - name: Install Dependencies
+        script: |
+          npm install
+          npm install @capacitor/ios @capacitor/cli
+      - name: Build Web Assets
+        script: |
+          # No build step needed - static HTML
+          echo "Static HTML game - no build required"
+      - name: Sync Capacitor
+        script: |
+          npx cap sync ios
       - name: Install CocoaPods
         script: |
           cd ios/App
           pod install
-      - name: Build IPA (with clean flags)
+      - name: Set up code signing
+        script: |
+          # Codemagic manages code signing automatically
+          echo "Code signing handled by Codemagic"
+      - name: Build IPA
         script: |
           xcode-project build-ipa \
             --project "ios/App/$XCODE_PROJECT" \
