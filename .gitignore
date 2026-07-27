@@ -1,0 +1,14 @@
+.node_modules/
+.DS_Store
+*.log
+/capacitor-cordova-ios-plugins/
+/ios/App/Pods/
+/ios/App/public/
+/ios/App/build/
+/ios/App/*.xcworkspace/xcuserdata/
+/ios/App/*.xcodeproj/xcuserdata/
+.codemagic/
+*.ipa
+*.app
+build/
+.codemagic/
