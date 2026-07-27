@@ -16,7 +16,6 @@ workflows:
           npm install
       - name: Build Web Assets
         script: |
-          # No build step needed - static HTML
           echo "Static HTML game - no build required"
       - name: Sync Capacitor
         script: |
@@ -25,6 +24,9 @@ workflows:
         script: |
           cd ios/App
           pod install
+      - name: Set up code signing
+        script: |
+          xcode-project use-profiles
       - name: Build IPA
         script: |
           cd ios/App
@@ -34,8 +36,7 @@ workflows:
             -configuration Release \
             -archivePath "$CM_BUILD_DIR/App.xcarchive" \
             -destination "generic/platform=iOS" \
-            CODE_SIGN_STYLE=Automatic \
-            DEVELOPMENT_TEAM="$APPLE_TEAM_ID"
+            CODE_SIGN_STYLE=Automatic
           xcodebuild -exportArchive \
             -archivePath "$CM_BUILD_DIR/App.xcarchive" \
             -exportPath "$CM_BUILD_DIR/ipa" \
