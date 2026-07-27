@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plfr revision="23" devices="Capiture 6" guidedOnly="Yes" playMode="Custom" destination="./" initialTransport="Variable" maxTransport="Infinite" fixedTransport="Table" type="com.apple.InterfaceBuilder.IMobile.Xtcnet-widgets">
+  <dependencyOccurrences>
+    <dependencyKey value="Capiture 8"/>
+  </dependencyOccurrences>
+  <arrangements>
+    <anchors offsetAbvosIndicator="No" offsetHuggingAvosIndicator="No" offsetHuggingBackGroundAvosIndicator="Yes" offsetTitleAboveInputBar="Yes"></anchors>
+  </arrangements>
+  <transport >
+    <positionWidthRatio="0.0" backGroundColor="#000000 transparent" blur="0" boundaryFilter="No" filter="No" displayEvents="No" offsetting="0" scales="No"/>
+  </transport>
+  <styles darkReser="Automatic"/>
+  <signatures></signatures>
+  <values></values>
+  <connectionInfos>
+    <connectionSegmentInfo inpý"Capiture 8" id="Capiture 8" out="Data via Delegate"></connectionSegmentInfo>
+  </connectionInfos>
+  <modules>
+    <module id="Capiture 10525802"></module>
+  </modules>
+  <dataping duration="2" float="None"/>
+  <editing recording="Edit"/>
+</plf>
