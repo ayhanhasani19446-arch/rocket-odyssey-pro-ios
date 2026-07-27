@@ -25,16 +25,21 @@ workflows:
         script: |
           cd ios/App
           pod install
-      - name: Set up code signing
-        script: |
-          # Codemagic manages code signing automatically
-          echo "Code signing handled by Codemagic"
       - name: Build IPA
         script: |
-          xcode-project build-ipa \
-            --workspace "ios/App/$XCODE_WORKSPACE" \
-            --scheme "$XCODE_SCHEME" \
-            --export-options-plist "ios/App/ExportOptions.plist"
+          cd ios/App
+          xcodebuild archive \
+            -workspace "$XCODE_WORKSPACE" \
+            -scheme "$XCODE_SCHEME" \
+            -configuration Release \
+            -archivePath "$CM_BUILD_DIR/App.xcarchive" \
+            -destination "generic/platform=iOS" \
+            CODE_SIGN_STYLE=Automatic \
+            DEVELOPMENT_TEAM="$APPLE_TEAM_ID"
+          xcodebuild -exportArchive \
+            -archivePath "$CM_BUILD_DIR/App.xcarchive" \
+            -exportPath "$CM_BUILD_DIR/ipa" \
+            -exportOptionsPlist "ExportOptions.plist"
     artifacts:
       - build/ios/ipa/*.ipa
     publishing:
