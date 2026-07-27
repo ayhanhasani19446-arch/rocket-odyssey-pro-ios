@@ -34,8 +34,7 @@ workflows:
           xcode-project build-ipa \
             --workspace "ios/App/$XCODE_WORKSPACE" \
             --scheme "$XCODE_SCHEME" \
-            --auto-sign \
-            --archive-flags="-destination 'generic/platform=iOS'"
+            --export-options-plist "ios/App/ExportOptions.plist"
     artifacts:
       - build/ios/ipa/*.ipa
     publishing:
